@@ -16,6 +16,9 @@
         background-color: rgba(0, 0, 0, 0.5);
         z-index: -1;
     }
+    @media (max-width: $phone-max) {
+        height: 600px;
+    }
     &__text {
         h1, span {
             color: white;

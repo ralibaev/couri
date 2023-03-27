@@ -7,11 +7,31 @@
         h2 {
             margin-bottom: 60px;
         }
+        @media (max-width: $tablet-max) {
+            padding-top: 120px;
+            padding-bottom: 120px;
+            h2 {
+                margin-bottom: 45px;
+            }
+        }
+        @media (max-width: $phone-max) {
+            padding-top: 60px;
+            padding-bottom: 60px;
+            h2 {
+                margin-bottom: 30px;
+                text-align: center;
+            }
+        }
     }
     &__list {
         display: flex;
         justify-content: space-between;
         height: 200px;
+        @media (max-width: $phone-max) {
+            flex-direction: column;
+            align-items: center;
+            height: auto;
+        }
     }
     &__item {
         display: flex;
@@ -26,6 +46,15 @@
         }
         svg {
             margin-bottom: 20px;
+        }
+        @media (max-width: $phone-max) {
+            width: 280px;
+            margin-bottom: 20px;
+            border: none;
+            &:last-child {
+                margin-bottom: 0;
+                border: none;
+            }
         }
     }
     &__text {

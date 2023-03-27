@@ -7,3 +7,17 @@ Modernizr.on('webp', function(result) {
     document.body.classList.add('no-webp');
   }
 });
+
+const headerMenuToggle = document.querySelector('.header__menu-toggle');
+if (headerMenuToggle) {
+  let headerMenu = document.querySelector('.header__menu');
+  headerMenuToggle.addEventListener('click', function() {
+    if (headerMenuToggle.classList.contains('header__menu-toggle--active')) {
+      headerMenuToggle.classList.remove('header__menu-toggle--active');
+      headerMenu.classList.remove('header__menu--active');
+    } else {
+      headerMenuToggle.classList.add('header__menu-toggle--active');
+      headerMenu.classList.add('header__menu--active');
+    }
+  })
+}

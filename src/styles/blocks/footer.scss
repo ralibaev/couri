@@ -1,0 +1,88 @@
+.footer {
+    color: white;
+    background-color: black;
+    &__container {
+        display: flex;
+        flex-direction: column;
+        padding-top: 106px;
+        padding-bottom: 10px;
+        @media (max-width: $tablet-max) {
+            padding-top: 60px;
+        }
+        @media (max-width: $phone-max) {
+            padding-top: 30px;
+        }
+    }
+    &__column-list {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 100px;
+        @media (max-width: $tablet-max) {
+            margin-bottom: 50px;
+        }
+        @media (max-width: $phone-max) {
+            flex-direction: column;
+            margin-bottom: 30px;
+        }
+    }
+    &__logo {
+        margin-right: auto;
+        @media (max-width: $phone-max) {
+            margin-bottom: 20px;
+        }
+    }
+    &__column {
+        max-width: 200px;
+        margin-left: 50px;
+        margin-right: 50px;
+        &--priem {
+            max-width: 250px;
+            margin-right: 0;
+            span {
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 1.4;
+            }
+        }
+        h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1;
+            text-transform: uppercase;
+            opacity: 0.5;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            li, a {
+                height: auto;
+                font-size: 16px;
+                line-height: 1.4;
+                color: white;
+                text-transform: none;
+            }
+            li {
+                margin-bottom: 8px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        @media (max-width: $tablet-max) {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        @media (max-width: $phone-max) {
+            margin: 0 0 20px;
+        }
+    }
+    &__copyright {
+        span {
+            font-size: 12px;
+            line-height: 130%;
+            opacity: 0.3;
+        }
+    }
+}

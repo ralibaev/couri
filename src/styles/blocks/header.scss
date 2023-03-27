@@ -2,6 +2,16 @@
     position: absolute;
     width: 100%;
     z-index: 1;
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
+        border-bottom: 1px solid rgba(242, 242, 242, 0.3);
+        @media (max-width: $phone-max) {
+            height: 60px;
+        }
+    }
     &__tel {
         border: 1px solid white;
         a {
@@ -17,13 +27,21 @@
                 color: black;
             }
         }
+        @media (max-width: $phone-max) {
+            display: none;
+        }
     }
-    &__top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 100px;
-        border-bottom: 1px solid rgba(242, 242, 242, 0.3);
+    &__logo {
+        svg {
+            width: 157px;
+            height: 63px;
+        }
+        @media (max-width: $phone-max) {
+            svg {
+                width: 100px;
+                height: 40px;
+            }
+        }
     }
     &__user {
         ul {
@@ -51,6 +69,12 @@
     }
     &__bottom {
         border-bottom: 1px solid rgba(242, 242, 242, 0.3);
+        @media (max-width: $phone-max) {
+            position: relative;
+            overflow: hidden;
+            min-height: 40px;
+            border-bottom: none;
+        }
     }
     &__menu {
         ul {
@@ -71,6 +95,71 @@
                     color: white;
                 }
             }
+        }
+        @media (max-width: $phone-max) {
+            // position: absolute;
+            transform: translateX(-100%);
+            transition: .3s ease;
+            &--active {
+                transform: translateX(0);
+            }
+            ul {
+                flex-direction: column;
+                align-items: center;
+                padding-top: 10px;
+                li {
+                    margin: 0 0 10px;
+                }
+            }
+        }
+    }
+    &__menu-toggle {
+        position: absolute;
+        right: 0;
+        top: 4px;
+        display: none;
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        span {
+            position: absolute;
+            left: 4px;
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: white;
+            transition: .3s ease;
+            &:nth-child(1) {
+                top: 6px;
+            }
+            &:nth-child(2) {
+                top: 15px;
+            }
+            &:nth-child(3) {
+                top: 24px;
+            }
+        }
+        &--active {
+            span {
+                &:nth-child(1), &:nth-child(3) {
+                    top: 14px;
+                }
+                &:nth-child(1) {
+                    transform: rotate(-45deg);
+                }
+                &:nth-child(2) {
+                    display: none;
+                }
+                &:nth-child(3) {
+                    transform: rotate(45deg);
+                }
+            }
+        }
+        @media (max-width: $phone-max) {
+            display: block;
         }
     }
 }

@@ -22,21 +22,20 @@ img {
 }
 picture {line-height: 0;}
 .container {
-	width: calc(100% - 40px);
-	padding-left: $phone-paddings;
-	padding-right: $phone-paddings;
+	max-width: 1200px;
+	width: calc(100% - 100px);
+	padding-left: $desktop-paddings;
+	padding-right: $desktop-paddings;
 	margin: 0 auto;
-	@media (min-width: $tablet-min) {
-		max-width: 600px;
+	@media (max-width: $tablet-max) {
 		width: calc(100% - 60px);
 		padding-left: $tablet-paddings;
 		padding-right: $tablet-paddings;
 	}
-	@media (min-width: $laptop-min) {
-		max-width: 1200px;
-		width: calc(100% - 100px);
-		padding-left: $desktop-paddings;
-		padding-right: $desktop-paddings;
+	@media (max-width: $phone-max) {
+		width: calc(100% - 40px);
+		padding-left: $phone-paddings;
+		padding-right: $phone-paddings;
 	}
 }
 a {
@@ -56,15 +55,33 @@ h1 {
 	margin: 0.5em 0;
 	font-size: 78px;
 	line-height: 1.2;
+	@media (max-width: $tablet-max) {
+		font-size: 60px;
+	}
+	@media (max-width: $phone-max) {
+		font-size: 36px;
+	}
 }
 h2 {
 	margin: 0;
 	font-size: 48px;
 	line-height: 1.4;
+	@media (max-width: $tablet-max) {
+		font-size: 36px;
+	}
+	@media (max-width: $phone-max) {
+		font-size: 24px;
+	}
 }
 p, span, li, strong {
 	font-size: 18px;
 	line-height: 1.4;
+	@media (max-width: $tablet-max) {
+		font-size: 16px;
+	}
+	@media (max-width: $phone-max) {
+		font-size: 14px;
+	}
 }
 p, span, li {
 	font-weight: 400;
